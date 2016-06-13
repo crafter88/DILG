@@ -1,0 +1,28 @@
+var initTables = function(scope, compile){
+	var base_url = $('#base_url').val(); 
+	var data = [
+			{'no': '123', 'created-by': 'Jazelle Mae Toledo', 'date_created': 'June 13, 2016'},
+			];
+	var all_table = $('#all-table').DataTable({
+		data: data,
+		//ajax: base_url+"/gss/head/ris/pending_sai",
+		columns: [
+					{'data': 'no'},
+					{'data': 'created-by'},
+					{'data': 'date_created'},
+					{
+						mData: null,
+						bSortable: false,
+						mRender: function(rowData, settings, sourceData){
+							return "<button type='button' class='btn btn-primary dispense-btn'>Dispense</button>"+
+									"<button type='button' class='btn btn-default view-sai'>View</button>";
+						}
+					}
+				],
+		columnDefs: [{targets: 3, width: '200px'}],
+	});
+
+	$('#all-table').on('click', '.dispense-btn', function(){
+		$('#dispense-modal').modal('show');
+	});
+}

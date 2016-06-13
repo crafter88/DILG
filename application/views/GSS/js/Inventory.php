@@ -1,0 +1,2 @@
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/GSS/js/Inventory/tables.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>asset/GSS/js/Inventory/angular.js"></script>
